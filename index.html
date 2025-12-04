@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Legend Cafe & Resto - Tempat Nongkrong Terbaik</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'coffee': '#4F352C',
+                        'creamy': '#F5F5DC',
+                        'accent': '#D4AF37', // Warna Emas/Kuning Kopi
+                    },
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body { 
+            font-family: 'Inter', sans-serif; 
+            scroll-behavior: smooth; 
+            background-color: #F8F8F8;
+        }
+        h1, h2 {
+            font-family: 'Playfair Display', serif;
+        }
+        .fade-in { opacity: 0; transform: translateY(20px); transition: all 0.8s ease; }
+        .fade-in.show { opacity: 1; transform: translateY(0); }
+        
+        .hero-bg {
+            background-image: url('/14699.jpg'); 
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        .hero-bg::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        /* Style untuk Modal */
+        .modal {
+            transition: opacity 0.3s ease-in-out;
+        }
+        
+        /* Carousel & ScrollToTop styles (dibiarkan sama) */
+        .carousel-container { overflow: hidden; }
+        .carousel-track { display: flex; transition: transform 0.5s ease-in-out; }
+        .carousel-item { flex: 0 0 100%; width: 100%; padding: 0 1rem; }
+        #scrollToTopBtn { transition: opacity 0.3s ease-in-out; opacity: 0; pointer-events: none; }
+        #scrollToTopBtn.show { opacity: 1; pointer-events: auto; }
+        @media (max-width: 768px) {
+            #prev-btn, #next-btn { position: static !important; transform: none !important; margin-top: 1rem; display: inline-block; }
+            .carousel-controls { text-align: center; margin-top: 1rem; }
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+
+    <nav class="fixed top-0 left-0 right-0 bg-white shadow-md z-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="#home" class="text-2xl font-bold text-coffee">THE LEGEND</a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-gray-600 hover:text-coffee transition">Beranda</a>
+                    <a href="#tentang" class="text-gray-600 hover:text-coffee transition">Tentang Kami</a>
+                    <a href="#menu" class="text-gray-600 hover:text-coffee transition">Menu Unggulan</a>
+                    <a href="#fasilitas" class="text-gray-600 hover:text-coffee transition">Fasilitas</a>
+                    <a href="#testimoni" class="text-gray-600 hover:text-coffee transition">Testimoni</a>
+                    <a href="#lokasi" class="text-gray-600 hover:text-coffee transition">Lokasi</a>
+                    <a href="#kontak" class="px-3 py-1 bg-coffee text-white rounded-full hover:bg-accent transition shadow-md">Reservasi</a>
+                </div>
+                <button id="menu-button" class="md:hidden text-gray-600 hover:text-coffee">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
+            <a href="#home" class="block px-4 py-2 text-gray-600 hover:bg-creamy" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Beranda</a>
+            <a href="#tentang" class="block px-4 py-2 text-gray-600 hover:bg-creamy" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Tentang Kami</a>
+            <a href="#menu" class="block px-4 py-2 text-gray-600 hover:bg-creamy" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Menu Unggulan</a>
+            <a href="#fasilitas" class="block px-4 py-2 text-gray-600 hover:bg-creamy" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Fasilitas</a>
+            <a href="#testimoni" class="block px-4 py-2 text-gray-600 hover:bg-creamy" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Testimoni</a>
+            <a href="#lokasi" class="block px-4 py-2 text-gray-600 hover:bg-creamy" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Lokasi Cabang</a>
+            <a href="#kontak" class="block px-4 py-2 bg-coffee/10 text-coffee hover:bg-coffee/20" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Reservasi</a>
+        </div>
+    </nav>
+    
+    <div class="h-16"></div> 
+
+    <section id="home" class="min-h-[calc(100vh-4rem)] flex flex-col justify-center items-center text-center px-6 hero-bg">
+        <div class="hero-content text-white">
+            <p class="text-base sm:text-lg font-medium mb-2 fade-in" style="transition-delay:0.1s">COFFEE. FOOD. AMBIANCE.</p>
+            <h1 class="text-5xl sm:text-7xl font-bold mb-4 fade-in" style="font-family: 'Playfair Display', serif;">The Legend Cafe & Resto</h1>
+            <p class="text-lg sm:text-xl font-medium text-white/90 fade-in" style="transition-delay:0.3s">Temukan Kisahmu, Nikmati Kelezatan Legendaris</p>
+            
+            <div class="mt-4 text-lg sm:text-xl font-semibold mb-6 fade-in" style="transition-delay:0.5s">
+                Kopi <span class="text-accent" id="typing-text"></span>, masakan lezat, dan suasana yang tak terlupakan.
+            </div>
+            
+            <button id="open-menu-modal-hero" class="mt-6 px-8 py-3 bg-accent text-coffee rounded-full text-base sm:text-lg shadow-xl hover:bg-accent/80 transition fade-in font-bold" style="transition-delay:0.7s">Lihat Menu Lengkap</button>
+        </div>
+    </section>
+
+    <section id="tentang" class="py-16 sm:py-20 px-4 sm:px-6 bg-creamy">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+            
+            <div class="fade-in order-2 md:order-1">
+                <img src="/logo.jpg" alt="Tentang The Legend Cafe" class="rounded-xl shadow-2xl w-full h-auto object-cover max-h-96" /> 
+            </div>
+
+            <div class="fade-in order-1 md:order-2">
+                <h2 class="text-3xl sm:text-4xl font-bold mb-4 md:mb-6 text-coffee text-center md:text-left">Kisah di Balik Legend</h2>
+                <p class="text-gray-700 mb-4 text-base sm:text-lg">
+                    Sejak 2018, **The Legend Cafe & Resto** hadir sebagai tempat pelarian dari hiruk pikuk kota. Kami percaya, setiap cangkir kopi membawa cerita.
+                </p>
+                <p class="text-gray-600 mb-4 text-sm sm:text-base">
+                    Kami menyajikan perpaduan sempurna antara **Kopi Lokal Premium** dengan menu masakan Western dan Nusantara yang diolah dengan hati. Interior kami didesain *cozy*, ideal untuk bekerja, bertemu, atau sekadar menikmati sore.
+                </p>
+                <a href="#lokasi" class="mt-4 inline-block text-coffee font-semibold hover:text-accent transition text-sm sm:text-base">
+                    Lihat Lokasi 2 Cabang Kami <i class="fas fa-arrow-right ml-1 text-sm"></i>
+                </a>
+            </div>
+
+        </div>
+    </section>
+    <section id="menu" class="py-16 sm:py-20 px-4 sm:px-6 bg-white">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 fade-in text-coffee">Pilihan Menu Favorit</h2>
+        <p class="text-center text-gray-600 mb-10 fade-in max-w-2xl mx-auto">
+            Ini adalah *highlight* dari hidangan dan minuman legendaris yang wajib Anda coba.
+        </p>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
+
+            <div class="p-6 border rounded-2xl shadow-sm fade-in hover:shadow-lg transition bg-gradient-to-br from-white to-creamy/50">
+                <i class="fas fa-mug-hot text-3xl text-coffee mb-3"></i>
+                <h3 class="text-xl font-semibold mb-2 text-coffee">Signature Coffee</h3>
+                <p class="text-gray-600 mb-4">Mulai dari Rp 25.000</p>
+                <ul class="text-gray-700 text-sm space-y-2">
+                    <li>✔ Espresso Based (Latte, Cappuccino)</li>
+                    <li>✔ Manual Brew (V60, Aeropress)</li>
+                    <li>✔ Es Kopi Legend (Best Seller)</li>
+                </ul>
+            </div>
+
+            <div class="p-6 border rounded-2xl shadow-sm fade-in hover:shadow-lg transition bg-gradient-to-br from-white to-accent/10">
+                <i class="fas fa-drumstick-bite text-3xl text-coffee mb-3"></i>
+                <h3 class="text-xl font-semibold mb-2 text-coffee">Main Course</h3>
+                <p class="text-gray-600 mb-4">Mulai dari Rp 45.000</p>
+                <ul class="text-gray-700 text-sm space-y-2">
+                    <li>✔ Steak Legend Blackpepper</li>
+                    <li>✔ Nasi Goreng Kampung Premium</li>
+                    <li>✔ Pasta (Carbonara & Aglio Olio)</li>
+                </ul>
+            </div>
+
+            <div class="p-6 border rounded-2xl shadow-sm fade-in hover:shadow-lg transition bg-gradient-to-br from-white to-creamy/50">
+                <i class="fas fa-cookie-bite text-3xl text-coffee mb-3"></i>
+                <h3 class="text-xl font-semibold mb-2 text-coffee">Dessert & Snack</h3>
+                <p class="text-gray-600 mb-4">Mulai dari Rp 18.000</p>
+                <ul class="text-gray-700 text-sm space-y-2">
+                    <li>✔ Brownies Ice Cream</li>
+                    <li>✔ French Fries Truffle</li>
+                    <li>✔ Aneka Donat Artisan</li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="text-center mt-12 fade-in">
+            <button id="open-menu-modal-section" class="px-8 py-3 bg-coffee text-white rounded-full text-base sm:text-lg shadow-xl hover:bg-accent transition font-bold">
+                <i class="fas fa-book-open mr-2"></i> Lihat Semua Menu Lengkap
+            </button>
+        </div>
+    </section>
+
+    <section id="fasilitas" class="py-16 sm:py-20 px-4 sm:px-6 bg-coffee/10">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 fade-in text-coffee">Fasilitas Kami</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 max-w-6xl mx-auto">
+            
+            <div class="text-center p-4 fade-in">
+                <i class="fas fa-wifi text-4xl text-coffee mb-3"></i>
+                <p class="text-lg font-semibold mb-1 text-coffee">Wi-Fi Super Cepat</p>
+                <p class="text-gray-600 text-xs sm:text-sm">Ideal untuk kerja remote atau meeting online.</p>
+            </div>
+
+            <div class="text-center p-4 fade-in">
+                <i class="fas fa-chair text-4xl text-coffee mb-3"></i>
+                <p class="text-lg font-semibold mb-1 text-coffee">Private Area</p>
+                <p class="text-gray-600 text-xs sm:text-sm">Tersedia ruang meeting dan area non-smoking.</p>
+            </div>
+
+            <div class="text-center p-4 fade-in">
+                <i class="fas fa-music text-4xl text-coffee mb-3"></i>
+                <p class="text-lg font-semibold mb-1 text-coffee">Live Music</p>
+                <p class="text-gray-600 text-xs sm:text-sm">Setiap malam akhir pekan untuk suasana santai.</p>
+            </div>
+
+            <div class="text-center p-4 fade-in">
+                <i class="fas fa-plug text-4xl text-coffee mb-3"></i>
+                <p class="text-lg font-semibold mb-1 text-coffee">Power Outlet</p>
+                <p class="text-gray-600 text-xs sm:text-sm">Stop kontak di setiap meja, anti lowbat.</p>
+            </div>
+
+        </div>
+    </section>
+    <section id="testimoni" class="py-16 sm:py-20 px-4 sm:px-6 bg-white">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 fade-in text-coffee">Apa Kata Pengunjung?</h2>
+        <div class="max-w-xl mx-auto relative">
+
+            <div class="carousel-container">
+                <div class="carousel-track" id="testimonial-track">
+                    <div class="carousel-item">
+                        <div class="p-6 border rounded-xl shadow-lg bg-gradient-to-br from-white to-creamy/60">
+                            <p class="text-gray-700 italic mb-4 text-center text-base sm:text-lg">“Kopinya **bold**, makanannya **enak banget**. Tempatnya paling *cozy* di kota ini!”</p>
+                            <p class="font-semibold text-coffee text-center">— Rina, Pelajar (Cabang Pusat)</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="p-6 border rounded-xl shadow-lg bg-gradient-to-br from-white to-accent/10">
+                            <p class="text-gray-700 italic mb-4 text-center text-base sm:text-lg">“Sangat **profesional** untuk meeting santai. WiFi cepat, pelayanan ramah.”</p>
+                            <p class="font-semibold text-coffee text-center">— David, Pengusaha (Cabang 2)</p>
+                        </div>
+                    </div>
+                     <div class="carousel-item">
+                        <div class="p-6 border rounded-xl shadow-lg bg-gradient-to-br from-white to-creamy/60">
+                            <p class="text-gray-700 italic mb-4 text-center text-base sm:text-lg">“Live music-nya asyik! Cocok buat ngumpul bareng teman-teman. **Recommended**!”</p>
+                            <p class="font-semibold text-coffee text-center">— Budi, Musisi (Cabang Pusat)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-controls flex justify-center md:justify-start space-x-4 md:space-x-0">
+                <button id="prev-btn" class="md:absolute top-1/2 -left-10 transform md:-translate-y-1/2 bg-coffee text-white p-3 rounded-full shadow-lg hover:bg-accent transition">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button id="next-btn" class="md:absolute top-1/2 -right-10 transform md:-translate-y-1/2 bg-coffee text-white p-3 rounded-full shadow-lg hover:bg-accent transition">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            
+        </div>
+    </section>
+    <section id="lokasi" class="py-16 sm:py-20 px-4 sm:px-6 bg-creamy">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 fade-in text-coffee">Lokasi Cabang Kami</h2>
+        <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            
+            <div class="p-6 border rounded-xl shadow-lg fade-in bg-white">
+                <h3 class="text-2xl font-semibold mb-2 text-coffee">Cabang Pusat - Downtown</h3>
+                <p class="text-gray-600 mb-4 text-sm">Jln. Mayoritas No. 12, Pusat Kota, [Nama Kota]</p>
+                <p class="text-gray-700 mb-4"><i class="fas fa-clock text-accent mr-2"></i> Buka setiap hari: 10.00 - 23.00 WIB</p>
+                <a href="link-gmaps-pusat" target="_blank" class="text-accent hover:text-coffee font-semibold text-sm">Lihat di Google Maps <i class="fas fa-location-dot ml-1"></i></a>
+            </div>
+
+            <div class="p-6 border rounded-xl shadow-lg fade-in bg-white">
+                <h3 class="text-2xl font-semibold mb-2 text-coffee">Cabang 2 - Riverside</h3>
+                <p class="text-gray-600 mb-4 text-sm">Jln. Pinggir Kali No. 50, Area Kampus, [Nama Kota]</p>
+                <p class="text-gray-700 mb-4"><i class="fas fa-clock text-accent mr-2"></i> Buka setiap hari: 09.00 - 22.00 WIB</p>
+                <a href="link-gmaps-cabang2" target="_blank" class="text-accent hover:text-coffee font-semibold text-sm">Lihat di Google Maps <i class="fas fa-location-dot ml-1"></i></a>
+            </div>
+
+        </div>
+    </section>
+    <section id="kontak" class="py-16 sm:py-20 px-4 sm:px-6 bg-coffee text-white text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 fade-in">Pesan Meja Anda Sekarang!</h2>
+        <p class="max-w-xl mx-auto text-white/90 fade-in text-base sm:text-lg">Hindari antrian panjang, lakukan reservasi cepat via WhatsApp. Kami tunggu kedatangan Anda.</p>
+        <a href="https://wa.me/6281234567890" target="_blank" class="mt-6 inline-block px-8 sm:px-10 py-3 sm:py-4 bg-accent text-coffee rounded-full shadow-xl font-semibold hover:bg-accent/80 transition fade-in text-base sm:text-lg">Reservasi Meja (Cabang Mana Saja)</a>
+    </section>
+
+
+    <div id="menu-modal" class="modal fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center p-4 z-50 hidden">
+        <div class="bg-white rounded-xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto transform scale-95 transition-transform duration-300">
+            <div class="p-6 border-b border-gray-200 sticky top-0 bg-white z-10">
+                <div class="flex justify-between items-center">
+                    <h3 class="text-2xl font-bold text-coffee">Daftar Menu Lengkap</h3>
+                    <button id="close-menu-modal" class="text-gray-500 hover:text-coffee">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+                <p class="text-sm text-gray-500 mt-1">Harga dapat berubah sewaktu-waktu.</p>
+            </div>
+            
+            <div class="p-6 space-y-8">
+                <div>
+                    <h4 class="text-xl font-bold text-accent mb-4 border-b pb-2">☕ Coffee & Beverages</h4>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="font-medium text-gray-800">Espresso</span>
+                            <span class="font-bold text-coffee">Rp 20.000</span>
+                        </div>
+                         <div class="flex justify-between items-center text-sm">
+                            <span class="font-medium text-gray-800">Cappuccino / Latte (Hot/Ice)</span>
+                            <span class="font-bold text-coffee">Rp 28.000</span>
+                        </div>
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="font-medium text-gray-800">Es Kopi Legend (Signature)</span>
+                            <span class="font-bold text-coffee">Rp 30.000</span>
+                        </div>
+                         <div class="flex justify-between items-center text-sm">
+                            <span class="font-medium text-gray-800">Tea, Mocktails & Juices</span>
+                            <span class="font-bold text-coffee">Rp 25.000 - Rp 35.000</span>
+                        </div>
+                        </div>
+                </div>
+
+                <div>
+                    <h4 class="text-xl font-bold text-accent mb-4 border-b pb-2">🍽️ Main Course</h4>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="font-medium text-gray-800">Legend Blackpepper Steak</span>
+                            <span class="font-bold text-coffee">Rp 75.000</span>
+                        </div>
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="font-medium text-gray-800">Nasi Goreng Legend Spesial</span>
+                            <span class="font-bold text-coffee">Rp 48.000</span>
+                        </div>
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="font-medium text-gray-800">Salmon Mentai Rice</span>
+                            <span class="font-bold text-coffee">Rp 65.000</span>
+                        </div>
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="font-medium text-gray-800">Ayam Geprek Sambal Matah</span>
+                            <span class="font-bold text-coffee">Rp 35.000</span>
+                        </div>
+                        </div>
+                </div>
+
+                <div>
+                    <h4 class="text-xl font-bold text-accent mb-4 border-b pb-2">🍰 Snacks & Desserts</h4>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="font-medium text-gray-800">Brownies Volcano Ice Cream</span>
+                            <span class="font-bold text-coffee">Rp 40.000</span>
+                        </div>
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="font-medium text-gray-800">Truffle Fries</span>
+                            <span class="font-bold text-coffee">Rp 32.000</span>
+                        </div>
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="font-medium text-gray-800">Classic Cheesecake Slice</span>
+                            <span class="font-bold text-coffee">Rp 45.000</span>
+                        </div>
+                        </div>
+                </div>
+
+            </div>
+            
+            <div class="p-4 bg-creamy/50 text-center text-sm text-gray-600 rounded-b-xl">
+                Untuk pemesanan atau pertanyaan menu lebih lanjut, silakan hubungi kami via WhatsApp.
+            </div>
+        </div>
+    </div>
+
+
+    <a href="https://wa.me/6281234567890" target="_blank" class="fixed bottom-6 right-6 bg-coffee text-white p-4 rounded-full shadow-lg text-xl hover:bg-accent transition z-50">💬</a>
+
+    <button id="scrollToTopBtn" class="fixed bottom-24 right-6 bg-coffee text-white p-3 rounded-full shadow-lg text-lg hover:bg-accent transition z-50">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script>
+        // ... (Kode JavaScript sebelumnya: FADE-IN, TYPING, CAROUSEL, SCROLL)
+
+        // 🚀 MODAL JS 🚀
+        const menuModal = document.getElementById('menu-modal');
+        const openMenuButtons = document.querySelectorAll('#open-menu-modal-hero, #open-menu-modal-section');
+        const closeMenuButton = document.getElementById('close-menu-modal');
+
+        function openModal() {
+            menuModal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Mencegah scroll pada body
+            setTimeout(() => {
+                menuModal.querySelector('div:first-child').classList.remove('scale-95');
+                menuModal.querySelector('div:first-child').classList.add('scale-100');
+            }, 10);
+        }
+
+        function closeModal() {
+            menuModal.querySelector('div:first-child').classList.remove('scale-100');
+            menuModal.querySelector('div:first-child').classList.add('scale-95');
+            setTimeout(() => {
+                menuModal.classList.add('hidden');
+                document.body.style.overflow = 'auto'; // Mengaktifkan scroll body
+            }, 300);
+        }
+
+        openMenuButtons.forEach(button => {
+            button.addEventListener('click', openModal);
+        });
+        
+        closeMenuButton.addEventListener('click', closeModal);
+
+        // Tutup modal jika klik di luar area konten modal
+        menuModal.addEventListener('click', (e) => {
+            if (e.target === menuModal) {
+                closeModal();
+            }
+        });
+        
+        // Tutup modal dengan tombol ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !menuModal.classList.contains('hidden')) {
+                closeModal();
+            }
+        });
+
+
+        // FADE-IN ANIMATION (Animasi Muncul)
+        const items = document.querySelectorAll('.fade-in');
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) entry.target.classList.add('show');
+          });
+        }, { threshold: 0.2 });
+
+        items.forEach(item => observer.observe(item));
+
+        // TYPING ANIMATION (Animasi Mengetik)
+        const words = ["berkualitas", "lokal premium", "terbaik", "pilihan hati"];
+        let wordIndex = 0;
+        let charIndex = 0;
+        const typingElement = document.getElementById('typing-text');
+        let isDeleting = false;
+        let typingSpeed = 150;
+        let deletingSpeed = 75;
+        let delayBetweenWords = 1500;
+
+        function type() {
+          const currentWord = words[wordIndex];
+          if (!isDeleting) {
+            if (charIndex < currentWord.length) {
+              typingElement.textContent += currentWord.charAt(charIndex);
+              charIndex++;
+              setTimeout(type, typingSpeed);
+            } else {
+              isDeleting = true;
+              setTimeout(type, delayBetweenWords);
+            }
+          } else {
+            if (charIndex > 0) {
+              typingElement.textContent = currentWord.substring(0, charIndex - 1);
+              charIndex--;
+              setTimeout(type, deletingSpeed);
+            } else {
+              isDeleting = false;
+              wordIndex = (wordIndex + 1) % words.length;
+              setTimeout(type, typingSpeed);
+            }
+          }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(type, 500);
+            updateCarousel();
+        });
+        
+        // TESTIMONIAL CAROUSEL (Slider Testimoni)
+        const track = document.getElementById('testimonial-track');
+        const itemsList = document.querySelectorAll('.carousel-item');
+        const nextBtn = document.getElementById('next-btn');
+        const prevBtn = document.getElementById('prev-btn');
+        let currentIndex = 0;
+
+        function updateCarousel() {
+            if (itemsList.length === 0) return; 
+            const itemWidth = itemsList[0].clientWidth;
+            const offset = -currentIndex * itemWidth;
+            track.style.transform = `translateX(${offset}px)`;
+        }
+
+        nextBtn.addEventListener('click', () => {
+            if (currentIndex < itemsList.length - 1) {
+                currentIndex++;
+            } else {
+                currentIndex = 0; 
+            }
+            updateCarousel();
+        });
+
+        prevBtn.addEventListener('click', () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+            } else {
+                currentIndex = itemsList.length - 1; 
+            }
+            updateCarousel();
+        });
+
+        window.addEventListener('resize', updateCarousel);
+        
+        
+        // SCROLL TO TOP & NAVBAR TOGGLE JS 
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+        const menuButton = document.getElementById('menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        window.onscroll = function() { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                scrollToTopBtn.classList.add('show');
+            } else {
+                scrollToTopBtn.classList.remove('show');
+            }
+        }
+
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+    </script>
+
+</body>
+</html>
