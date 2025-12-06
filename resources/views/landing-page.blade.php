@@ -3,7 +3,48 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The Legend Cafe & Resto - Tempat Nongkrong Terbaik</title>
+    <title>The Legend Cafe Resto Tasikmalaya — Tempat Nongkrong & Cafe Terbaik di Tasik</title>
+    <meta name="description" content="The Legend Cafe & Resto di Tasikmalaya (Cabang Downtown) menyajikan kopi lokal premium, steak, dan masakan Nusantara. Tempat nongkrong yang cozy dan cafe terbaik untuk keluarga. Reservasi sekarang!">
+    <meta name="keywords" content="the legend cafe resto, cafe terbaik tasikmalaya, the legend cafe tasik, restoran keluarga tasik, tempat nongkrong tasik, coffee shop tasik">
+    <link rel="canonical" href="https://www.thelegendcafe.com/" />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "The Legend Cafe & Resto Terbaik di Tasikmalaya",
+      "image": "assets/images/logo.jpg", 
+      "description": "The Legend Cafe dan Resto di Tasikmalaya, spesialis kopi premium, makanan Western, dan tempat nongkrong yang cozy. Kami adalah cafe terbaik dan restoran keluarga di Tasik.",
+      "url": "https://www.thelegendcafe.com/",
+      "priceRange": "$$",
+      "servesCuisine": [
+        "Coffee",
+        "Western",
+        "Nusantara",
+        "Desserts"
+      ],
+      "telephone": "+6289519870281",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Jl Pemuda No 29, Samping Bengkel Lodi",
+        "addressLocality": "Tasikmalaya",
+        "addressRegion": "Jawa Barat",
+        "addressCountry": "ID"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "250" 
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+          "opens": "09:00",
+          "closes": "23:00"
+        }
+      ]
+    }
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -12,7 +53,7 @@
                     colors: {
                         'coffee': '#4F352C',
                         'creamy': '#F5F5DC',
-                        'accent': '#D4AF37', // Warna Emas/Kuning Kopi
+                        'accent': '#D4AF37',
                     },
                 }
             }
@@ -35,7 +76,7 @@
         .fade-in.show { opacity: 1; transform: translateY(0); }
         
         .hero-bg {
-            background-image: url('/14699.jpg'); 
+            background-image: url('assets/images/14699.jpg');
             background-size: cover;
             background-position: center;
             position: relative;
@@ -76,7 +117,13 @@
     <nav class="fixed top-0 left-0 right-0 bg-white shadow-md z-40">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
-                <a href="#home" class="text-2xl font-bold text-coffee">THE LEGEND</a>
+                
+                <a href="#home" class="flex items-center space-x-2">
+                    <img src="/logo.jpeg" alt="Logo The Legend" class="w-8 h-8 rounded-full md:w-10 md:h-10"> 
+                    <span class="text-base md:text-xl font-bold text-coffee whitespace-nowrap">
+                        <span class="hidden sm:inline">THE LEGEND CAFE & RESTO</span>
+                        <span class="sm:hidden">The Legend Resto</span> </span>
+                </a>
                 <div class="hidden md:flex space-x-8">
                     <a href="#home" class="text-gray-600 hover:text-coffee transition">Beranda</a>
                     <a href="#tentang" class="text-gray-600 hover:text-coffee transition">Tentang Kami</a>
@@ -106,9 +153,9 @@
 
     <section id="home" class="min-h-[calc(100vh-4rem)] flex flex-col justify-center items-center text-center px-6 hero-bg">
         <div class="hero-content text-white">
-            <p class="text-base sm:text-lg font-medium mb-2 fade-in" style="transition-delay:0.1s">COFFEE. FOOD. AMBIANCE.</p>
+            <p class="text-base sm:text-lg font-medium mb-2 fade-in" style="transition-delay:0.1s">COFFEE. FOOD. AMBIANCE. Terbaik di Tasikmalaya.</p>
             <h1 class="text-5xl sm:text-7xl font-bold mb-4 fade-in" style="font-family: 'Playfair Display', serif;">The Legend Cafe & Resto</h1>
-            <p class="text-lg sm:text-xl font-medium text-white/90 fade-in" style="transition-delay:0.3s">Temukan Kisahmu, Nikmati Kelezatan Legendaris</p>
+            <p class="text-lg sm:text-xl font-medium text-white/90 fade-in" style="transition-delay:0.3s">Temukan Kisahmu di Cafe **The Legend Resto** Tasikmalaya</p>
             
             <div class="mt-4 text-lg sm:text-xl font-semibold mb-6 fade-in" style="transition-delay:0.5s">
                 Kopi <span class="text-accent" id="typing-text"></span>, masakan lezat, dan suasana yang tak terlupakan.
@@ -122,34 +169,34 @@
         <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 md:gap-12 items-center">
             
             <div class="fade-in order-2 md:order-1">
-                <img src="/logo.jpg" alt="Tentang The Legend Cafe" class="rounded-xl shadow-2xl w-full h-auto object-cover max-h-96" /> 
+                <img src="/logo.jpeg" alt="Tentang The Legend Cafe Resto Tasikmalaya" class="rounded-xl shadow-2xl w-full h-full object-cover max-h-96" /> 
             </div>
 
             <div class="fade-in order-1 md:order-2">
-                <h2 class="text-3xl sm:text-4xl font-bold mb-4 md:mb-6 text-coffee text-center md:text-left">Kisah di Balik Legend</h2>
+                <h2 class="text-3xl sm:text-4xl font-bold mb-4 md:mb-6 text-coffee text-center md:text-left">Kisah di Balik Legend, Cafe Terbaik di Tasikmalaya</h2>
                 <p class="text-gray-700 mb-4 text-base sm:text-lg">
                     Sejak 2018, **The Legend Cafe & Resto** hadir sebagai tempat pelarian dari hiruk pikuk kota. Kami percaya, setiap cangkir kopi membawa cerita.
                 </p>
                 <p class="text-gray-600 mb-4 text-sm sm:text-base">
-                    Kami menyajikan perpaduan sempurna antara **Kopi Lokal Premium** dengan menu masakan Western dan Nusantara yang diolah dengan hati. Interior kami didesain *cozy*, ideal untuk bekerja, bertemu, atau sekadar menikmati sore.
+                    **The Legend Resto** menyajikan perpaduan sempurna antara **Kopi Lokal Premium** dengan menu masakan Western dan Nusantara yang diolah dengan hati. Interior kami didesain *cozy* dan nyaman, ideal untuk bekerja, bertemu, atau sekadar menikmati sore di **Tasikmalaya**.
                 </p>
                 <a href="#lokasi" class="mt-4 inline-block text-coffee font-semibold hover:text-accent transition text-sm sm:text-base">
-                    Lihat Lokasi 2 Cabang Kami <i class="fas fa-arrow-right ml-1 text-sm"></i>
+                    Lihat Lokasi Kami <i class="fas fa-arrow-right ml-1 text-sm"></i>
                 </a>
             </div>
 
         </div>
     </section>
+    
     <section id="menu" class="py-16 sm:py-20 px-4 sm:px-6 bg-white">
-        <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 fade-in text-coffee">Pilihan Menu Favorit</h2>
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 fade-in text-coffee">Pilihan Menu Favorit The Legend Cafe Resto</h2>
         <p class="text-center text-gray-600 mb-10 fade-in max-w-2xl mx-auto">
             Ini adalah *highlight* dari hidangan dan minuman legendaris yang wajib Anda coba.
         </p>
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
-
             <div class="p-6 border rounded-2xl shadow-sm fade-in hover:shadow-lg transition bg-gradient-to-br from-white to-creamy/50">
                 <i class="fas fa-mug-hot text-3xl text-coffee mb-3"></i>
-                <h3 class="text-xl font-semibold mb-2 text-coffee">Signature Coffee</h3>
+                <h3 class="text-xl font-semibold mb-2 text-coffee">Signature Coffee The Legend</h3>
                 <p class="text-gray-600 mb-4">Mulai dari Rp 25.000</p>
                 <ul class="text-gray-700 text-sm space-y-2">
                     <li>✔ Espresso Based (Latte, Cappuccino)</li>
@@ -160,7 +207,7 @@
 
             <div class="p-6 border rounded-2xl shadow-sm fade-in hover:shadow-lg transition bg-gradient-to-br from-white to-accent/10">
                 <i class="fas fa-drumstick-bite text-3xl text-coffee mb-3"></i>
-                <h3 class="text-xl font-semibold mb-2 text-coffee">Main Course</h3>
+                <h3 class="text-xl font-semibold mb-2 text-coffee">Main Course Resto</h3>
                 <p class="text-gray-600 mb-4">Mulai dari Rp 45.000</p>
                 <ul class="text-gray-700 text-sm space-y-2">
                     <li>✔ Steak Legend Blackpepper</li>
@@ -171,7 +218,7 @@
 
             <div class="p-6 border rounded-2xl shadow-sm fade-in hover:shadow-lg transition bg-gradient-to-br from-white to-creamy/50">
                 <i class="fas fa-cookie-bite text-3xl text-coffee mb-3"></i>
-                <h3 class="text-xl font-semibold mb-2 text-coffee">Dessert & Snack</h3>
+                <h3 class="text-xl font-semibold mb-2 text-coffee">Dessert & Snack Cafe</h3>
                 <p class="text-gray-600 mb-4">Mulai dari Rp 18.000</p>
                 <ul class="text-gray-700 text-sm space-y-2">
                     <li>✔ Brownies Ice Cream</li>
@@ -189,37 +236,33 @@
     </section>
 
     <section id="fasilitas" class="py-16 sm:py-20 px-4 sm:px-6 bg-coffee/10">
-        <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 fade-in text-coffee">Fasilitas Kami</h2>
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 fade-in text-coffee">Fasilitas Cafe & Resto Kami</h2>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 max-w-6xl mx-auto">
-            
             <div class="text-center p-4 fade-in">
                 <i class="fas fa-wifi text-4xl text-coffee mb-3"></i>
                 <p class="text-lg font-semibold mb-1 text-coffee">Wi-Fi Super Cepat</p>
                 <p class="text-gray-600 text-xs sm:text-sm">Ideal untuk kerja remote atau meeting online.</p>
             </div>
-
             <div class="text-center p-4 fade-in">
                 <i class="fas fa-chair text-4xl text-coffee mb-3"></i>
                 <p class="text-lg font-semibold mb-1 text-coffee">Private Area</p>
                 <p class="text-gray-600 text-xs sm:text-sm">Tersedia ruang meeting dan area non-smoking.</p>
             </div>
-
             <div class="text-center p-4 fade-in">
                 <i class="fas fa-music text-4xl text-coffee mb-3"></i>
                 <p class="text-lg font-semibold mb-1 text-coffee">Live Music</p>
                 <p class="text-gray-600 text-xs sm:text-sm">Setiap malam akhir pekan untuk suasana santai.</p>
             </div>
-
             <div class="text-center p-4 fade-in">
                 <i class="fas fa-plug text-4xl text-coffee mb-3"></i>
                 <p class="text-lg font-semibold mb-1 text-coffee">Power Outlet</p>
                 <p class="text-gray-600 text-xs sm:text-sm">Stop kontak di setiap meja, anti lowbat.</p>
             </div>
-
         </div>
     </section>
+    
     <section id="testimoni" class="py-16 sm:py-20 px-4 sm:px-6 bg-white">
-        <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 fade-in text-coffee">Apa Kata Pengunjung?</h2>
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 fade-in text-coffee">Apa Kata Pengunjung The Legend?</h2>
         <div class="max-w-xl mx-auto relative">
 
             <div class="carousel-container">
@@ -227,19 +270,19 @@
                     <div class="carousel-item">
                         <div class="p-6 border rounded-xl shadow-lg bg-gradient-to-br from-white to-creamy/60">
                             <p class="text-gray-700 italic mb-4 text-center text-base sm:text-lg">“Kopinya **bold**, makanannya **enak banget**. Tempatnya paling *cozy* di kota ini!”</p>
-                            <p class="font-semibold text-coffee text-center">— Rina, Pelajar (Cabang Pusat)</p>
+                            <p class="font-semibold text-coffee text-center">— Rina, Pelajar</p>
                         </div>
                     </div>
                     <div class="carousel-item">
                         <div class="p-6 border rounded-xl shadow-lg bg-gradient-to-br from-white to-accent/10">
                             <p class="text-gray-700 italic mb-4 text-center text-base sm:text-lg">“Sangat **profesional** untuk meeting santai. WiFi cepat, pelayanan ramah.”</p>
-                            <p class="font-semibold text-coffee text-center">— David, Pengusaha (Cabang 2)</p>
+                            <p class="font-semibold text-coffee text-center">— David, Pengusaha</p>
                         </div>
                     </div>
                      <div class="carousel-item">
                         <div class="p-6 border rounded-xl shadow-lg bg-gradient-to-br from-white to-creamy/60">
                             <p class="text-gray-700 italic mb-4 text-center text-base sm:text-lg">“Live music-nya asyik! Cocok buat ngumpul bareng teman-teman. **Recommended**!”</p>
-                            <p class="font-semibold text-coffee text-center">— Budi, Musisi (Cabang Pusat)</p>
+                            <p class="font-semibold text-coffee text-center">— Budi, Musisi</p>
                         </div>
                     </div>
                 </div>
@@ -256,30 +299,61 @@
             
         </div>
     </section>
+    
     <section id="lokasi" class="py-16 sm:py-20 px-4 sm:px-6 bg-creamy">
-        <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 fade-in text-coffee">Lokasi Cabang Kami</h2>
-        <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 fade-in text-coffee">Lokasi The Legend Cafe Resto Tasikmalaya</h2>
+        
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 fade-in bg-white gap-0 items-stretch rounded-xl shadow-2xl overflow-hidden">
             
-            <div class="p-6 border rounded-xl shadow-lg fade-in bg-white">
-                <h3 class="text-2xl font-semibold mb-2 text-coffee">Cabang Pusat - Downtown</h3>
-                <p class="text-gray-600 mb-4 text-sm">Jln. Mayoritas No. 12, Pusat Kota, [Nama Kota]</p>
-                <p class="text-gray-700 mb-4"><i class="fas fa-clock text-accent mr-2"></i> Buka setiap hari: 10.00 - 23.00 WIB</p>
-                <a href="link-gmaps-pusat" target="_blank" class="text-accent hover:text-coffee font-semibold text-sm">Lihat di Google Maps <i class="fas fa-location-dot ml-1"></i></a>
+            <div class="p-8 lg:p-10 md:order-1 flex flex-col justify-center border-b md:border-b-0 md:border-r border-creamy">
+                <h3 class="text-3xl font-bold mb-4 text-coffee">The Legend Coffee Shop</h3>
+                <p class="text-gray-500 mb-6 font-medium">Cabang Pemuda Tasikmalaya</p>
+                
+                <ul class="space-y-4 text-gray-700">
+                    <li class="flex items-center">
+                        <i class="fas fa-map-marker-alt text-xl text-accent mr-3 mt-1 shrink-0"></i> 
+                        <span class="text-base">
+                            **Jl Pemuda No 29**, Samping Bengkel Lodi, Kota Tasikmalaya
+                        </span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-phone-alt text-xl text-accent mr-3 mt-1 shrink-0"></i> 
+                        <span class="text-base">
+                            **Kontak:** 0895-1987-0281
+                        </span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-clock text-xl text-accent mr-3 mt-1 shrink-0"></i> 
+                        <span class="text-base">
+                            Buka setiap hari: **09.00 - 23.00 WIB**
+                        </span>
+                    </li>
+                </ul>
+                
+                <a href="https://maps.app.goo.gl/ContohLinkMaps" target="_blank" class="mt-8 self-start text-white bg-coffee px-6 py-3 rounded-full font-semibold text-sm inline-flex items-center hover:bg-accent hover:text-coffee transition shadow-md">
+                    <i class="fas fa-directions mr-2"></i> Petunjuk Arah Google Maps 
+                </a>
             </div>
-
-            <div class="p-6 border rounded-xl shadow-lg fade-in bg-white">
-                <h3 class="text-2xl font-semibold mb-2 text-coffee">Cabang 2 - Riverside</h3>
-                <p class="text-gray-600 mb-4 text-sm">Jln. Pinggir Kali No. 50, Area Kampus, [Nama Kota]</p>
-                <p class="text-gray-700 mb-4"><i class="fas fa-clock text-accent mr-2"></i> Buka setiap hari: 09.00 - 22.00 WIB</p>
-                <a href="link-gmaps-cabang2" target="_blank" class="text-accent hover:text-coffee font-semibold text-sm">Lihat di Google Maps <i class="fas fa-location-dot ml-1"></i></a>
+            
+            <div class="md:order-2 h-96 md:h-full w-full"> 
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.2257523249805!2d108.2208171418912!3d-7.328522875591678!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6f5745c462cefd%3A0x2f3eb2b7451ade62!2sJl.%20Pemuda%20No.29%2C%20Yudanagara%2C%20Kec.%20Cihideung%2C%20Kab.%20Tasikmalaya%2C%20Jawa%20Barat%2046121!5e0!3m2!1sid!2sid!4v1765003909898!5m2!1sid!2sid" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
             </div>
 
         </div>
     </section>
+    
     <section id="kontak" class="py-16 sm:py-20 px-4 sm:px-6 bg-coffee text-white text-center">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4 fade-in">Pesan Meja Anda Sekarang!</h2>
-        <p class="max-w-xl mx-auto text-white/90 fade-in text-base sm:text-lg">Hindari antrian panjang, lakukan reservasi cepat via WhatsApp. Kami tunggu kedatangan Anda.</p>
-        <a href="https://wa.me/6281234567890" target="_blank" class="mt-6 inline-block px-8 sm:px-10 py-3 sm:py-4 bg-accent text-coffee rounded-full shadow-xl font-semibold hover:bg-accent/80 transition fade-in text-base sm:text-lg">Reservasi Meja (Cabang Mana Saja)</a>
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 fade-in">Pesan Meja Anda di The Legend Cafe Resto Tasik!</h2>
+        <p class="max-w-xl mx-auto text-white/90 fade-in text-base sm:text-lg">Hubungi kami untuk reservasi cepat via WhatsApp.</p>
+        <a href="https://wa.me/6289519870281" target="_blank" class="mt-6 inline-block px-8 sm:px-10 py-3 sm:py-4 bg-accent text-coffee rounded-full shadow-xl font-semibold hover:bg-accent/80 transition fade-in text-base sm:text-lg">Reservasi Meja Sekarang</a>
     </section>
 
 
@@ -287,7 +361,7 @@
         <div class="bg-white rounded-xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto transform scale-95 transition-transform duration-300">
             <div class="p-6 border-b border-gray-200 sticky top-0 bg-white z-10">
                 <div class="flex justify-between items-center">
-                    <h3 class="text-2xl font-bold text-coffee">Daftar Menu Lengkap</h3>
+                    <h3 class="text-2xl font-bold text-coffee">Daftar Menu Lengkap The Legend Cafe & Resto</h3>
                     <button id="close-menu-modal" class="text-gray-500 hover:text-coffee">
                         <i class="fas fa-times text-xl"></i>
                     </button>
@@ -367,16 +441,14 @@
     </div>
 
 
-    <a href="https://wa.me/6281234567890" target="_blank" class="fixed bottom-6 right-6 bg-coffee text-white p-4 rounded-full shadow-lg text-xl hover:bg-accent transition z-50">💬</a>
+    <a href="https://wa.me/6289519870281" target="_blank" class="fixed bottom-6 right-6 bg-coffee text-white p-4 rounded-full shadow-lg text-xl hover:bg-accent transition z-50">💬</a>
 
     <button id="scrollToTopBtn" class="fixed bottom-24 right-6 bg-coffee text-white p-3 rounded-full shadow-lg text-lg hover:bg-accent transition z-50">
         <i class="fas fa-chevron-up"></i>
     </button>
 
     <script>
-        // ... (Kode JavaScript sebelumnya: FADE-IN, TYPING, CAROUSEL, SCROLL)
-
-        // 🚀 MODAL JS 🚀
+        // ... (Kode JavaScript lengkap) ...
         const menuModal = document.getElementById('menu-modal');
         const openMenuButtons = document.querySelectorAll('#open-menu-modal-hero, #open-menu-modal-section');
         const closeMenuButton = document.getElementById('close-menu-modal');
@@ -526,8 +598,6 @@
         scrollToTopBtn.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
-
     </script>
-
 </body>
 </html>
