@@ -175,10 +175,10 @@
             <div class="fade-in order-1 md:order-2">
                 <h2 class="text-3xl sm:text-4xl font-bold mb-4 md:mb-6 text-coffee text-center md:text-left">Kisah di Balik Legend, Cafe Terbaik di Tasikmalaya</h2>
                 <p class="text-gray-700 mb-4 text-base sm:text-lg">
-                    Sejak 2020, **The Legend Cafe & Resto** hadir sebagai tempat pelarian dari hiruk pikuk kota. Kami percaya, setiap cangkir kopi membawa cerita.
+                    Sejak 2020, <strong>The Legend Cafe & Resto</strong> hadir sebagai tempat pelarian dari hiruk pikuk kota. Kami percaya, setiap cangkir kopi membawa cerita.
                 </p>
                 <p class="text-gray-600 mb-4 text-sm sm:text-base">
-                    **The Legend Resto** menyajikan perpaduan sempurna antara **Kopi Lokal Premium** dengan menu masakan Western dan Nusantara yang diolah dengan hati. Interior kami didesain *cozy* dan nyaman, ideal untuk bekerja, bertemu, atau sekadar menikmati sore di **Tasikmalaya**.
+                   <strong>The Legend Cafe & Resto</strong> menyajikan perpaduan sempurna antara <strong>Kopi Lokal Premium</strong> dengan menu masakan Western dan Nusantara yang diolah dengan hati. Interior kami didesain <strong>cozy dan nyaman</strong>, ideal untuk bekerja, bertemu, atau sekadar menikmati sore di Tasikmalaya.
                 </p>
                 <a href="#lokasi" class="mt-4 inline-block text-coffee font-semibold hover:text-accent transition text-sm sm:text-base">
                     Lihat Lokasi Kami <i class="fas fa-arrow-right ml-1 text-sm"></i>

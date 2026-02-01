@@ -8,89 +8,137 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
+:root{
+    --primary:#c59d5f;
+    --dark:#111;
+    --text:#333;
+    --muted:#777;
+}
+
 body{
     font-family:'Poppins',sans-serif;
     margin:0;
-    background:#f9f9f9;
-    color:#333;
+    background:#f7f7f7;
+    color:var(--text);
+    line-height:1.6;
 }
+
+/* ===== HEADER ===== */
 header{
-    background:#111;
+    background:linear-gradient(135deg,#111,#1b1b1b);
     color:#fff;
-    padding:32px;
+    padding:48px 20px;
     text-align:center;
 }
-.container{padding:40px 6%;}
+header h1{
+    margin:0;
+    font-size:32px;
+    font-weight:600;
+    letter-spacing:.5px;
+}
+header p{
+    margin-top:8px;
+    font-size:15px;
+    color:#ddd;
+}
 
-/* ===== TABS ===== */
+/* ===== CONTAINER ===== */
+.container{
+    padding:48px 6%;
+    max-width:1200px;
+    margin:auto;
+}
+
+/* ===== MAIN TABS ===== */
 .tabs{
     display:flex;
     justify-content:space-around;
-    margin-bottom:24px;
+    margin-bottom:32px;
 }
 .tab{
     cursor:pointer;
     font-weight:600;
-    padding-bottom:6px;
+    font-size:17px;
+    padding:8px 4px;
     border-bottom:3px solid transparent;
+    transition:.3s;
 }
+.tab:hover{color:var(--primary);}
 .tab.active{
-    border-color:#c59d5f;
-    color:#c59d5f;
+    border-color:var(--primary);
+    color:var(--primary);
 }
 
 /* ===== SUB TABS ===== */
 .sub-tabs{
     display:flex;
     justify-content:space-around;
-    margin-bottom:20px;
+    margin-bottom:28px;
 }
 .sub-tab{
     cursor:pointer;
-    font-size:14px;
-    padding-bottom:4px;
+    font-size:15px;
+    font-weight:500;
+    padding:6px 4px;
     border-bottom:2px solid transparent;
+    transition:.3s;
 }
+.sub-tab:hover{color:var(--primary);}
 .sub-tab.active{
-    border-color:#c59d5f;
-    color:#c59d5f;
+    border-color:var(--primary);
+    color:var(--primary);
 }
 
 /* ===== MENU GRID ===== */
 .menu-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fill, minmax(280px, 1fr));
-    gap:24px;
+    grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+    gap:28px;
 }
+
+/* ===== MENU CARD ===== */
 .menu-list{
     background:#fff;
-    border-radius:14px;
-    padding:20px;
-    box-shadow:0 8px 20px rgba(0,0,0,.08);
+    border-radius:16px;
+    padding:24px 22px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
 }
+
+/* ===== MENU ITEM ===== */
 .menu-item{
     display:flex;
     justify-content:space-between;
-    align-items:center;
-    padding:8px 0;
-    border-bottom:1px dashed #ddd;
-    font-size:14px;
+    align-items:flex-start;
+    gap:16px;
+    padding:10px 0;
+    border-bottom:1px dashed #e1e1e1;
 }
 .menu-item:last-child{border-bottom:none;}
+
+.menu-item span:first-child{
+    font-size:15px;
+    font-weight:500;
+}
 .price{
+    font-size:15px;
     font-weight:600;
-    color:#c59d5f;
+    color:var(--primary);
+    white-space:nowrap;
 }
 
-/* ===== HIDE ===== */
+/* ===== UTIL ===== */
 .hidden{display:none;}
 
-@media(max-width:600px){
-    .tabs,.sub-tabs{
-        font-size:14px;
-    }
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+    header h1{font-size:26px;}
+    .tab{font-size:15px;}
+    .sub-tab{font-size:14px;}
+    .menu-item span:first-child{font-size:14px;}
+    .price{font-size:14px;}
 }
 </style>
+
 </head>
 
 <body>
