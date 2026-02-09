@@ -161,7 +161,7 @@
                 Kopi <span class="text-accent" id="typing-text"></span>, masakan lezat, dan suasana yang tak terlupakan.
             </div>
             
-            <a href="#menu" class="mt-6 px-8 py-3 bg-accent text-coffee rounded-full text-base sm:text-lg shadow-xl hover:bg-accent/80 transition fade-in font-bold" style="transition-delay:0.7s">Lihat Menu Lengkap</a>
+            <a href="menu.html" class="mt-6 inline-block px-8 py-3 bg-accent text-coffee rounded-full text-base sm:text-lg shadow-xl hover:bg-accent/80 transition fade-in font-bold" style="transition-delay:0.7s">Lihat Menu Lengkap</a>
         </div>
     </section>
 
@@ -369,89 +369,6 @@
     </section>
 
 
-    <!-- <div id="menu-modal" class="modal fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center p-4 z-50 hidden">
-        <div class="bg-white rounded-xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto transform scale-95 transition-transform duration-300">
-            <div class="p-6 border-b border-gray-200 sticky top-0 bg-white z-10">
-                <div class="flex justify-between items-center">
-                    <h3 class="text-2xl font-bold text-coffee">Daftar Menu Lengkap The Legend Cafe & Resto</h3>
-                    <button id="close-menu-modal" class="text-gray-500 hover:text-coffee">
-                        <i class="fas fa-times text-xl"></i>
-                    </button>
-                </div>
-                <p class="text-sm text-gray-500 mt-1">Harga dapat berubah sewaktu-waktu.</p>
-            </div>
-            
-            <div class="p-6 space-y-8">
-                <div>
-                    <h4 class="text-xl font-bold text-accent mb-4 border-b pb-2">☕ Coffee & Beverages</h4>
-                    <div class="space-y-3">
-                        <div class="flex justify-between items-center text-sm">
-                            <span class="font-medium text-gray-800">Espresso</span>
-                            <span class="font-bold text-coffee">Rp 20.000</span>
-                        </div>
-                         <div class="flex justify-between items-center text-sm">
-                            <span class="font-medium text-gray-800">Cappuccino / Latte (Hot/Ice)</span>
-                            <span class="font-bold text-coffee">Rp 28.000</span>
-                        </div>
-                        <div class="flex justify-between items-center text-sm">
-                            <span class="font-medium text-gray-800">Es Kopi Legend (Signature)</span>
-                            <span class="font-bold text-coffee">Rp 30.000</span>
-                        </div>
-                         <div class="flex justify-between items-center text-sm">
-                            <span class="font-medium text-gray-800">Tea, Mocktails & Juices</span>
-                            <span class="font-bold text-coffee">Rp 25.000 - Rp 35.000</span>
-                        </div>
-                        </div>
-                </div>
-
-                <div>
-                    <h4 class="text-xl font-bold text-accent mb-4 border-b pb-2">🍽️ Main Course</h4>
-                    <div class="space-y-3">
-                        <div class="flex justify-between items-center text-sm">
-                            <span class="font-medium text-gray-800">Legend Blackpepper Steak</span>
-                            <span class="font-bold text-coffee">Rp 75.000</span>
-                        </div>
-                        <div class="flex justify-between items-center text-sm">
-                            <span class="font-medium text-gray-800">Nasi Goreng Legend Spesial</span>
-                            <span class="font-bold text-coffee">Rp 48.000</span>
-                        </div>
-                        <div class="flex justify-between items-center text-sm">
-                            <span class="font-medium text-gray-800">Salmon Mentai Rice</span>
-                            <span class="font-bold text-coffee">Rp 65.000</span>
-                        </div>
-                        <div class="flex justify-between items-center text-sm">
-                            <span class="font-medium text-gray-800">Ayam Geprek Sambal Matah</span>
-                            <span class="font-bold text-coffee">Rp 35.000</span>
-                        </div>
-                        </div>
-                </div>
-
-                <div>
-                    <h4 class="text-xl font-bold text-accent mb-4 border-b pb-2">🍰 Snacks & Desserts</h4>
-                    <div class="space-y-3">
-                        <div class="flex justify-between items-center text-sm">
-                            <span class="font-medium text-gray-800">Brownies Volcano Ice Cream</span>
-                            <span class="font-bold text-coffee">Rp 40.000</span>
-                        </div>
-                        <div class="flex justify-between items-center text-sm">
-                            <span class="font-medium text-gray-800">Truffle Fries</span>
-                            <span class="font-bold text-coffee">Rp 32.000</span>
-                        </div>
-                        <div class="flex justify-between items-center text-sm">
-                            <span class="font-medium text-gray-800">Classic Cheesecake Slice</span>
-                            <span class="font-bold text-coffee">Rp 45.000</span>
-                        </div>
-                        </div>
-                </div>
-
-            </div>
-            
-            <div class="p-4 bg-creamy/50 text-center text-sm text-gray-600 rounded-b-xl">
-                Untuk pemesanan atau pertanyaan menu lebih lanjut, silakan hubungi kami via WhatsApp.
-            </div>
-        </div>
-    </div> -->
-
 
     <a href="https://wa.me/6289519870281" target="_blank" class="fixed bottom-6 right-6 bg-coffee text-white p-4 rounded-full shadow-lg text-xl hover:bg-accent transition z-50">💬</a>
 
@@ -460,50 +377,6 @@
     </button>
 
     <script>
-        // ... (Kode JavaScript lengkap) ...
-        const menuModal = document.getElementById('menu-modal');
-        const openMenuButtons = document.querySelectorAll('#open-menu-modal-hero, #open-menu-modal-section');
-        const closeMenuButton = document.getElementById('close-menu-modal');
-
-        function openModal() {
-            menuModal.classList.remove('hidden');
-            document.body.style.overflow = 'hidden'; // Mencegah scroll pada body
-            setTimeout(() => {
-                menuModal.querySelector('div:first-child').classList.remove('scale-95');
-                menuModal.querySelector('div:first-child').classList.add('scale-100');
-            }, 10);
-        }
-
-        function closeModal() {
-            menuModal.querySelector('div:first-child').classList.remove('scale-100');
-            menuModal.querySelector('div:first-child').classList.add('scale-95');
-            setTimeout(() => {
-                menuModal.classList.add('hidden');
-                document.body.style.overflow = 'auto'; // Mengaktifkan scroll body
-            }, 300);
-        }
-
-        openMenuButtons.forEach(button => {
-            button.addEventListener('click', openModal);
-        });
-        
-        closeMenuButton.addEventListener('click', closeModal);
-
-        // Tutup modal jika klik di luar area konten modal
-        menuModal.addEventListener('click', (e) => {
-            if (e.target === menuModal) {
-                closeModal();
-            }
-        });
-        
-        // Tutup modal dengan tombol ESC
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && !menuModal.classList.contains('hidden')) {
-                closeModal();
-            }
-        });
-
-
         // FADE-IN ANIMATION (Animasi Muncul)
         const items = document.querySelectorAll('.fade-in');
         const observer = new IntersectionObserver(entries => {
