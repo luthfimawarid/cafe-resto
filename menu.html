@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Menu - The Legend Cafe & Resto</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --primary:#c59d5f;
+    --dark:#111;
+    --text:#333;
+    --muted:#777;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    margin:0;
+    background:#f7f7f7;
+    color:var(--text);
+    line-height:1.6;
+}
+
+/* ===== HEADER ===== */
+header{
+    background:linear-gradient(135deg,#111,#1b1b1b);
+    color:#fff;
+    padding:48px 20px;
+    text-align:center;
+}
+header h1{
+    margin:0;
+    font-size:32px;
+    font-weight:600;
+    letter-spacing:.5px;
+}
+header p{
+    margin-top:8px;
+    font-size:15px;
+    color:#ddd;
+}
+
+/* ===== CONTAINER ===== */
+.container{
+    padding:48px 6%;
+    max-width:1200px;
+    margin:auto;
+}
+
+/* ===== MAIN TABS ===== */
+.tabs{
+    display:flex;
+    justify-content:space-around;
+    margin-bottom:32px;
+}
+.tab{
+    cursor:pointer;
+    font-weight:600;
+    font-size:17px;
+    padding:8px 4px;
+    border-bottom:3px solid transparent;
+    transition:.3s;
+}
+.tab:hover{color:var(--primary);}
+.tab.active{
+    border-color:var(--primary);
+    color:var(--primary);
+}
+
+/* ===== SUB TABS ===== */
+.sub-tabs{
+    display:flex;
+    justify-content:space-around;
+    margin-bottom:28px;
+}
+.sub-tab{
+    cursor:pointer;
+    font-size:15px;
+    font-weight:500;
+    padding:6px 4px;
+    border-bottom:2px solid transparent;
+    transition:.3s;
+}
+.sub-tab:hover{color:var(--primary);}
+.sub-tab.active{
+    border-color:var(--primary);
+    color:var(--primary);
+}
+
+/* ===== MENU GRID ===== */
+.menu-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+    gap:28px;
+}
+
+/* ===== MENU CARD ===== */
+.menu-list{
+    background:#fff;
+    border-radius:16px;
+    padding:24px 22px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+/* ===== MENU ITEM ===== */
+.menu-item{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:16px;
+    padding:10px 0;
+    border-bottom:1px dashed #e1e1e1;
+}
+.menu-item:last-child{border-bottom:none;}
+
+.menu-item span:first-child{
+    font-size:15px;
+    font-weight:500;
+}
+.price{
+    font-size:15px;
+    font-weight:600;
+    color:var(--primary);
+    white-space:nowrap;
+}
+
+/* ===== UTIL ===== */
+.hidden{display:none;}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+    header h1{font-size:26px;}
+    .tab{font-size:15px;}
+    .sub-tab{font-size:14px;}
+    .menu-item span:first-child{font-size:14px;}
+    .price{font-size:14px;}
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+    <h1>The Legend Cafe & Resto</h1>
+    <p>Menu Lengkap Food & Beverage</p>
+</header>
+
+<div class="container">
+
+<div class="tabs">
+    <div class="tab active" onclick="showMain('food')">🍽 Food</div>
+    <div class="tab" onclick="showMain('beverage')">☕ Beverage</div>
+</div>
+
+<!-- ================= FOOD ================= -->
+<div id="food" class="main-section">
+
+<div class="sub-tabs">
+    <div class="sub-tab active" onclick="showSub('food','main')">Main Course</div>
+    <div class="sub-tab" onclick="showSub('food','snack')">Cemilan</div>
+</div>
+
+<!-- MAIN COURSE -->
+<div id="food-main" class="menu-grid">
+<div class="menu-list">
+
+<div class="menu-item"><span>Yamin Manis</span><span class="price">18k</span></div>
+<div class="menu-item"><span>Yamin Asin</span><span class="price">18k</span></div>
+<div class="menu-item"><span>Mie Bakso Kuah</span><span class="price">18k</span></div>
+<div class="menu-item"><span>Mie Bakso Kuah Pangsit</span><span class="price">22k</span></div>
+
+<div class="menu-item"><span>Mie Goreng Biasa</span><span class="price">26k</span></div>
+<div class="menu-item"><span>Mie Goreng Spesial</span><span class="price">30k</span></div>
+<div class="menu-item"><span>Mie Rebus Biasa</span><span class="price">26k</span></div>
+<div class="menu-item"><span>Mie Rebus Spesial</span><span class="price">30k</span></div>
+
+<div class="menu-item"><span>Nasi Goreng Biasa</span><span class="price">25k</span></div>
+<div class="menu-item"><span>Nasi Goreng Cikur</span><span class="price">25k</span></div>
+<div class="menu-item"><span>Nasi Goreng Katsu</span><span class="price">30k</span></div>
+<div class="menu-item"><span>Nasi Goreng Kunyit</span><span class="price">25k</span></div>
+<div class="menu-item"><span>Nasi Goreng Spesial</span><span class="price">30k</span></div>
+
+<div class="menu-item"><span>Capcay Goreng / Kuah</span><span class="price">32,5k</span></div>
+<div class="menu-item"><span>Chicken Katsu</span><span class="price">30k</span></div>
+<div class="menu-item"><span>Chicken Steak</span><span class="price">32,5k</span></div>
+<div class="menu-item"><span>Chicken Teriyaki</span><span class="price">32,5k</span></div>
+
+<div class="menu-item"><span>Iga Bakar</span><span class="price">30k</span></div>
+<div class="menu-item"><span>Sop Iga</span><span class="price">28k</span></div>
+
+<div class="menu-item"><span>Indomie Polos</span><span class="price">8k</span></div>
+<div class="menu-item"><span>Indomie Sosis</span><span class="price">12k</span></div>
+<div class="menu-item"><span>Indomie Telor</span><span class="price">15k</span></div>
+<div class="menu-item"><span>Indomie Keju</span><span class="price">10k</span></div>
+<div class="menu-item"><span>Indomie Keju Sosis</span><span class="price">15k</span></div>
+<div class="menu-item"><span>Indomie Keju Sosis Telor</span><span class="price">18k</span></div>
+
+</div>
+</div>
+
+<!-- SNACK -->
+<div id="food-snack" class="menu-grid hidden">
+<div class="menu-list">
+
+<div class="menu-item"><span>Omlet</span><span class="price">10k</span></div>
+<div class="menu-item"><span>Omlet Cheese</span><span class="price">12k</span></div>
+<div class="menu-item"><span>Omlet Sosis</span><span class="price">12k</span></div>
+<div class="menu-item"><span>Omlet Sosis Cheese</span><span class="price">15k</span></div>
+
+<div class="menu-item"><span>Bala-bala Legend</span><span class="price">8k</span></div>
+<div class="menu-item"><span>Risol Mayo</span><span class="price">10k</span></div>
+<div class="menu-item"><span>Risol Ayam</span><span class="price">10k</span></div>
+<div class="menu-item"><span>Cireng Legend</span><span class="price">8k</span></div>
+
+<div class="menu-item"><span>Kentang Goreng</span><span class="price">12k</span></div>
+<div class="menu-item"><span>Kentang Sosis</span><span class="price">15k</span></div>
+
+<div class="menu-item"><span>Pisang Bakar Cokelat</span><span class="price">22k</span></div>
+<div class="menu-item"><span>Pisang Bakar Keju</span><span class="price">22k</span></div>
+<div class="menu-item"><span>Pisang Bakar Cokelat Keju</span><span class="price">25k</span></div>
+
+<div class="menu-item"><span>Roti Bakar Cokelat / Keju</span><span class="price">18k</span></div>
+<div class="menu-item"><span>Roti Bakar Cokelat Keju</span><span class="price">20k</span></div>
+<div class="menu-item"><span>Donat (All Varian)</span><span class="price">6k</span></div>
+
+</div>
+</div>
+</div>
+
+<!-- ================= BEVERAGE ================= -->
+<div id="beverage" class="main-section hidden">
+
+<div class="sub-tabs">
+    <div class="sub-tab active" onclick="showSub('bev','coffee')">Coffee</div>
+    <div class="sub-tab" onclick="showSub('bev','non')">Non Coffee</div>
+</div>
+
+<div id="bev-coffee" class="menu-grid">
+<div class="menu-list">
+<div class="menu-item"><span>Espresso</span><span class="price">—</span></div>
+<div class="menu-item"><span>Americano</span><span class="price">—</span></div>
+<div class="menu-item"><span>Cappuccino</span><span class="price">—</span></div>
+<div class="menu-item"><span>Cafe Latte</span><span class="price">—</span></div>
+<div class="menu-item"><span>Choco Latte</span><span class="price">15k</span></div>
+</div>
+</div>
+
+<div id="bev-non" class="menu-grid hidden">
+<div class="menu-list">
+
+<div class="menu-item"><span>Milkshake (Mango / Strawberry / Vanilla)</span><span class="price">15k</span></div>
+<div class="menu-item"><span>Mix Blend Caramel</span><span class="price">16k</span></div>
+<div class="menu-item"><span>Oreo & Cream</span><span class="price">16k</span></div>
+
+<div class="menu-item"><span>Juice (Mangga, Jeruk, Strawberry, Naga, Melon)</span><span class="price">12k</span></div>
+<div class="menu-item"><span>Juice Tomat / Wortel</span><span class="price">10k</span></div>
+
+<div class="menu-item"><span>Mojito</span><span class="price">15k</span></div>
+<div class="menu-item"><span>Orange / Lemon Squash</span><span class="price">15k</span></div>
+<div class="menu-item"><span>Soda Susu</span><span class="price">12k</span></div>
+
+<div class="menu-item"><span>Lemon Tea</span><span class="price">10k</span></div>
+<div class="menu-item"><span>Lychee Tea</span><span class="price">12k</span></div>
+
+</div>
+</div>
+</div>
+
+</div>
+
+<script>
+function showMain(type){
+    document.querySelectorAll('.main-section').forEach(e=>e.classList.add('hidden'));
+    document.getElementById(type).classList.remove('hidden');
+    document.querySelectorAll('.tab').forEach(e=>e.classList.remove('active'));
+    event.target.classList.add('active');
+}
+function showSub(group,type){
+    if(group==='food'){
+        ['main','snack'].forEach(i=>document.getElementById(`food-${i}`).classList.add('hidden'));
+        document.getElementById(`food-${type}`).classList.remove('hidden');
+    }else{
+        ['coffee','non'].forEach(i=>document.getElementById(`bev-${i}`).classList.add('hidden'));
+        document.getElementById(`bev-${type}`).classList.remove('hidden');
+    }
+    event.target.parentElement.querySelectorAll('.sub-tab').forEach(e=>e.classList.remove('active'));
+    event.target.classList.add('active');
+}
+</script>
+
+</body>
+</html>
